@@ -1,0 +1,12 @@
+<?php
+$id=$_GET["id"];
+//id为inews?is_hd和j5_ch85?is_hd
+$info=file_get_contents("http://news.tvb.com/live/$id"); 
+preg_match('/<source src="(.*?)"/i',$info,$sn);
+$playurl=$sn[1];
+header('location:'.urldecode($playurl));
+?>
+
+https://www.szkis.com/tv/tvb.php?id=inews?is_hd
+
+https://www.szkis.com/tv/tvb.php?id=j5_ch85?is_hd
